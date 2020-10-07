@@ -20,7 +20,7 @@ do
   mangled="${dest//\//_}"   # replace slashes by underscores
   newTemplate="${mangled}.toml"
   toml=/etc/confd/conf.d/${mangled}.toml
-  mv "${template}" "/etc/confd/templates/${newTemplate}"
+  cp "${template}" "/etc/confd/templates/${newTemplate}"
   echo "[template]" > "$toml"
   echo "src = \"$newTemplate\"" >> "$toml"
   echo "dest = \"$dest\"" >> "$toml"
